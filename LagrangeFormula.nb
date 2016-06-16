@@ -1,0 +1,180 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6644,        171]
+NotebookOptionsPosition[      6254,        153]
+NotebookOutlinePosition[      6597,        168]
+CellTagsIndexPosition[      6554,        165]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LagrangeFormula", "[", 
+   RowBox[{"nodes_", ",", "values_", ",", "x_"}], "]"}], ":=", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Basises", " ", "=", " ", 
+     RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"CurrentI", " ", "=", " ", "1"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Polinom", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"i", "=", "1"}], ";", "\t", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{"Calculate", " ", "Basises"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"While", "[", 
+     RowBox[{
+      RowBox[{"CurrentI", " ", "\[NotEqual]", " ", 
+       RowBox[{
+        RowBox[{"Length", "[", "nodes", "]"}], " ", "+", "1"}]}], ",", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"CurrentBasis", " ", "=", " ", "1"}], ";", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"index", " ", "=", "1"}], ";", "\[IndentingNewLine]", "\t", 
+       RowBox[{"While", "[", " ", 
+        RowBox[{
+         RowBox[{"index", " ", "\[NotEqual]", 
+          RowBox[{
+           RowBox[{"Length", "[", "nodes", "]"}], " ", "+", "1"}]}], ",", 
+         "\[IndentingNewLine]", "\t\t", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"CurrentI", " ", "\[NotEqual]", " ", "index"}], ",", 
+            "\[IndentingNewLine]", "\t\t\t", 
+            RowBox[{
+             RowBox[{"CurrentBasis", " ", "=", " ", 
+              RowBox[{"CurrentBasis", " ", "*", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"x", " ", "-", 
+                   RowBox[{"nodes", "[", 
+                    RowBox[{"[", "index", "]"}], "]"}]}], ")"}], "/", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"nodes", "[", 
+                    RowBox[{"[", "CurrentI", "]"}], "]"}], " ", "-", " ", 
+                   RowBox[{"nodes", "[", 
+                    RowBox[{"[", "index", "]"}], "]"}]}], ")"}]}], ")"}]}]}], 
+             ";"}]}], "\[IndentingNewLine]", "\t\t", "]"}], ";", 
+          "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+          RowBox[{"index", "++"}]}]}], "\[IndentingNewLine]", "\t", "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"Basises", ",", "CurrentBasis"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"CurrentI", " ", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}],
+     ";", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{"Calculate", " ", "Polinom"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"While", "[", " ", 
+     RowBox[{
+      RowBox[{"i", " ", "\[NotEqual]", " ", 
+       RowBox[{
+        RowBox[{"Length", "[", "values", "]"}], " ", "+", "1"}]}], ",", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"Polinom", " ", "+=", " ", 
+        RowBox[{
+         RowBox[{"values", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], "*", 
+         RowBox[{"Basises", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"i", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+    "\[IndentingNewLine]", "Polinom"}], "\[IndentingNewLine]", 
+   ")"}]}]], "Input",
+ CellChangeTimes->{{3.6583098384745636`*^9, 3.658310121023652*^9}, {
+   3.658310206336174*^9, 3.658310206586152*^9}, {3.65831030780739*^9, 
+   3.6583103113270283`*^9}, {3.658310538344998*^9, 3.6583105387043886`*^9}, {
+   3.658310666256031*^9, 3.658310682467044*^9}, {3.6583107227363524`*^9, 
+   3.6583107580012536`*^9}, {3.6583108197082133`*^9, 3.658310835590103*^9}, {
+   3.6583108781953316`*^9, 3.6583108882155046`*^9}, {3.6583119170104003`*^9, 
+   3.6583119540997677`*^9}, 3.6583120585952215`*^9, {3.658312096436613*^9, 
+   3.658312103735284*^9}, {3.658312208307893*^9, 3.6583122563496075`*^9}, 
+   3.658312443164027*^9, 3.658312481586607*^9, {3.6583126877723165`*^9, 
+   3.6583126897255225`*^9}, {3.658312727047679*^9, 3.6583129837325373`*^9}, {
+   3.658313016548377*^9, 3.658313017548436*^9}, {3.6583130478245134`*^9, 
+   3.658313143995146*^9}, {3.6583131903426824`*^9, 3.658313224232213*^9}, {
+   3.658315758713665*^9, 3.658315855305626*^9}, {3.6583950504261384`*^9, 
+   3.6583950687907495`*^9}, {3.658396218592499*^9, 3.658396223901409*^9}, {
+   3.6583963983401823`*^9, 3.6583964006490107`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"xS", " ", "=", " ", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"Pi", "/", "2"}], ",", 
+       RowBox[{"Pi", "/", "4"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"yS", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Cos", "[", "x", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", 
+         RowBox[{"Pi", "/", "2"}], ",", 
+         RowBox[{"Pi", "/", "4"}]}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.658990414310424*^9, 3.6589904396865435`*^9}, {
+  3.675070692388133*^9, 3.675070700993162*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"LagrangeFormula", "[", 
+    RowBox[{"xS", ",", "yS", ",", "x"}], "]"}], " ", "//", " ", "Expand"}], 
+  " ", "//", " ", "N"}]], "Input",
+ CellChangeTimes->{{3.6589904568147025`*^9, 3.6589904770669823`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.`", "\[VeryThinSpace]", "-", 
+  RowBox[{"0.1092266847885317`", " ", "x"}], "-", 
+  RowBox[{"0.3357488673628104`", " ", 
+   SuperscriptBox["x", "2"]}]}]], "Output",
+ CellChangeTimes->{{3.658990464730544*^9, 3.658990477507141*^9}, 
+   3.6750707132886734`*^9}]
+}, Open  ]]
+},
+WindowSize->{1350, 685},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4391, 90, 532, "Input"],
+Cell[4952, 112, 723, 20, 92, "Input"],
+Cell[CellGroupData[{
+Cell[5700, 136, 252, 6, 31, "Input"],
+Cell[5955, 144, 283, 6, 64, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
